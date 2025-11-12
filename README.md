@@ -1,38 +1,66 @@
-﻿# nlp-evaluator
+﻿NLP Phase Evaluator – Fact Check and Analysis App
+Overview
 
-# 📰 Politifact NLP Phase Evaluator
+This project is a Streamlit-based NLP analysis and fact-checking tool designed to:
 
-A **Streamlit web application** to evaluate political statements using NLP techniques.  
-The app can **scrape statements from PolitiFact**, allow CSV uploads of pre-collected data, and perform **machine learning-based analysis** with multiple models.  
+Scrape political statements from PolitiFact
+.
 
----
+Run NLP model benchmarking across multiple classifiers.
 
-## Features
+Validate the accuracy of scraped statements using the Google Fact Check API.
 
-- **Data Sourcing**
-  - Scrape statements from [PolitiFact](https://www.politifact.com/) by **date range**.
-  - Upload your own CSV file with statements and labels.
+Provide both automated and manual fact-checking features.
 
-- **Data Filtering**
-  - Filter scraped/uploaded data by **date range** or **speaker**.
+It helps users analyze NLP phase performance, compare model metrics, and evaluate truthfulness of statements using verified external sources.
 
-- **NLP Analysis**
-  - Convert statements into **TF-IDF vectors**.
-  - Encode labels automatically.
-  - Run multiple ML models:
-    - **Naive Bayes**
-    - **Decision Tree**
-    - **Logistic Regression**
-    - **Support Vector Machine (SVM)**
-    - **K-Nearest Neighbors (KNN)**
+Features
+1. Data Scraping
 
-- **Performance Evaluation**
-  - Displays **accuracy**, **F1-score**, and **training time**.
-  - Visual **bar chart comparison** of models.
-  - **Scatter plot trade-off**: time vs accuracy.
+Automatically scrapes recent statements from PolitiFact.
 
-- **Caching**
-  - Scraped data is cached to reduce repeated requests and speed up the app.
----
+Configurable by date range and number of pages (up to 50 pages).
 
+Cleans, structures, and stores the dataset in memory for analysis.
 
+2. NLP Model Benchmarking
+
+Compares multiple machine learning models:
+
+Naive Bayes
+
+Decision Tree
+
+Logistic Regression
+
+SVM
+
+KNN
+
+Displays model accuracy, F1-score, and time performance.
+
+Visualizes results through comparative bar charts.
+
+3. Google Fact Checker Integration
+
+Uses the Google Fact Check Tools API to verify statements.
+
+Includes:
+
+Manual fact checking (enter any custom statement).
+
+Cross-validation (randomly sample or validate all scraped statements).
+
+Calculates overall agreement accuracy between PolitiFact and other fact-checking publishers.
+
+4. Compact and Clean UI
+
+Built entirely with Streamlit.
+
+Minimal scrolling layout:
+
+Compact scraper section.
+
+Center-aligned benchmarking and analysis panels.
+
+Sidebar includes manual and automated fact-checking tools.
